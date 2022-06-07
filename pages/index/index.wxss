@@ -1,0 +1,265 @@
+/*index.wxss*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+/*显示用户信息模块，暂未启用，所以用注释的形式呈现
+.avatarInfo {
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  padding: 0 50rpx;
+}
+.avatarInfo .avatar {
+  display: block;
+  overflow: hidden;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.avatarInfo .name {
+  padding: 0 20rpx;
+  font-size: 38rpx;
+}
+*/
+/*界面的背景*/
+.bcg {
+  overflow:hidden;
+  position: fixed;
+  background-size: 100% 100%; 
+  z-index: 1; 
+  margin: 0px; 
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* background: #40a7e7; */
+  /* background: linear-gradient(to bottom, #73C6F1, #50B5EC); */
+}
+/*搜索框及内容呈现*/
+.Operate{
+  z-index: 2;
+  display: flex;
+  margin-left: 2px;
+  align-items: center;
+  color:rgba(43, 48, 117, 0.747);
+}
+
+.Input{
+  width: 570rpx;
+  height: 90rpx;
+  padding: 5rpx 5rpx;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid rgb(255, 255, 255);
+  font-size: 15px;
+  border-radius: 7px;
+}
+.Button{
+  width: 160rpx;
+  height: 90rpx;
+  font-size: 15px;
+  margin-left: 4px;
+}
+
+.weizhi{
+  z-index: 2;
+  display: flex;
+  margin-left: 2px;
+  align-items: center;
+}
+.dingwei{
+  height: 40rpx;
+  width: 40rpx;
+  margin-top: 20rpx;
+  margin-left: 40rpx;
+}
+/*城市名称及对应的天气*/
+.cityname{
+  margin-left: 20rpx;
+  font-size: 40rpx;
+  color:rgba(255, 255, 255, 0.986);
+}
+.pic{
+  margin-left: 300rpx;
+  width: 100rpx;
+  height:100rpx;
+}
+.dangtian{
+  z-index: 2;
+  margin-top: 20rps;
+}
+.wendu{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 200rpx;
+  font-style:normal;
+  color:rgba(255, 255, 255, 0.986);
+}
+.type{ /*天气类型*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 70rpx;
+  font-style:normal;
+  margin-top: 50rpx;
+  color:rgba(255, 255, 255, 0.986);
+}
+.fanwei{/*温度范围*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  font-style:normal;
+  color:rgba(255, 255, 255, 0.986);
+}
+.notice{
+  font-size: 22rpx;
+  /* height: 2em; */
+  line-height: 2em;
+  padding: 10rpx 20rpx;
+  border-radius: 5rpx;
+  color:rgba(78, 81, 121, 0.986);
+  background: rgba(240, 240, 240, 0.4);
+  margin: 10rpx;
+}
+/*mini引导页，
+用以呈现当日详细信息，以及未来15天的天气预报*/
+.guide{
+  z-index: 2;
+  margin-top: 40rpx;
+}
+/*引导栏顶部的界面设置，背景及字体等*/
+.guide .guides {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 24rpx;
+  padding-top: 20rpx;
+  background: rgba(80, 79, 71, 0.363);
+  margin-bottom: 20rpx;
+  overflow-x: scroll;
+  color:rgba(255, 255, 255, 0.986);
+}
+.guide .title,
+.hourly .title ,
+/*引导栏内部呈现的天气信息，背景及字体等的设置*/
+.livingIndextitle{
+  background: rgba(80, 79, 71, 0.363);
+  font-size: 24rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color:rgba(255, 255, 255, 0.986);
+}
+.guide .item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 170rpx;
+  flex-shrink: 0;
+}
+.guide image {
+  width: 44rpx;
+}
+.guide .i {
+  padding-bottom: 20rpx;
+}
+.guide .i.weather,
+.hour .weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.guide .i image,
+/*有关今日天气的详细叙述*/
+.jinritianqi{
+  z-index: 2;
+  display: flex;
+  margin-left: 2px;
+  align-items: center;
+  margin-top: 2rpx;
+  margin-bottom: 40rpx;
+  font-size: 30rpx;
+  white-space: nowrap;
+}
+.jrwendu{
+  margin:30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+.jrtianqi{
+  margin:30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+.jrshidu{
+  margin:30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+.jrzhiliang{
+  margin:30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+.jrgaowen{
+  margin:30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+.jrdiwen{
+  margin:30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+.jrrichu{
+  margin:30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+.jrriluo{
+  margin:30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+.jrfengsu{
+  margin:30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+.jrfengli{
+  margin:30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+/*天气图标*/
+.picture{
+  width: 40rpx;
+  height:40rpx;
+}
+
+

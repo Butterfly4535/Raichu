@@ -1,0 +1,15 @@
+{
+    "pages": [
+      "pages/index/index",
+      "pages/logs/logs"
+    ],
+
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#0484e0",
+      "navigationBarTitleText": "Weather Report",
+      "navigationBarTextStyle": "black"
+    },
+    
+    "sitemapLocation": "sitemap.json"
+  }

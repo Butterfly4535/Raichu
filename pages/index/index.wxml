@@ -1,0 +1,135 @@
+<!--index.wxml-->
+<view class="container">
+
+  <view>
+    <image class='bcg'mode='aspectFill' src="{{back}}"></image>
+  </view>  
+<!-- 搜索框及搜索按钮 -->
+  <view class="Operate">
+    <view>
+      <input type="text" class="Input" auto-focus placeholder="搜索城市" style='background:rgba(255, 255, 255, 0)'bindblur="huoqushuru" bindinput="huoqushuru" bindconfirm="huoqushuru"></input>
+    </view>
+    <view>
+      <button class="Button" bindtap="dianjianniu">搜索</button>
+    </view>
+  </view>
+ <!-- 显示用户信息模块，暂未启用，所以用注释的形式呈现 -->
+  <!-- <view class='avatarInfo' catchtap='showBcgImgArea'> -->
+    <!-- <open-data class='avatar' type='userAvatarUrl'></open-data> -->
+    <!-- <open-data class='name' type='userNickName'></open-data> -->
+  <!-- </view> -->
+<!-- 城市名称及天气图标 -->
+  <view class="weizhi">
+    <image class="dingwei" src="{{dingwei}}"></image>
+    <view class="cityname">
+      {{cityName}}
+    </view>
+    <image class="pic"src="{{ico}}"></image>
+  </view>
+<!-- 温度、天气类型及气温范围 -->
+  <view class="dangtian">
+    <view class="wendu">{{wendu}}<text style='font-size:50rpx;position:relative;top:-20px;'>℃</text></view>
+    <view class="type">{{forecast[0].type}}</view>
+    <view class="fanwei">{{forecast[0].high}}</view>
+    <view class="fanwei">{{forecast[0].low}}</view>
+    <view class="notice">{{notice}}</view>
+  </view>
+<!-- 未来15天的天气预报 -->
+  <view class="guide">
+    <view class="title">未来15天</view>
+    <view class="guides">
+      <view class='item' wx:for='{{forecast}}' wx:key="index">
+        <view class='date i'>{{item.date}}号</view>
+        <view class='temperature i'>{{item.high}}</view>
+        <view class='temperature i'>{{item.low}}</view>
+        <view class='weather i'>
+          <text>{{item.type}}</text>
+          <!-- 根据天气显示对应的图标 -->
+          <view wx:if = '{{item.type == "晴"}}'>
+            <image class="picture" src="{{qing}}"></image>
+          </view>
+           <view wx:if = '{{item.type == "多云"}}'>
+            <image class="picture" src="{{duoyun}}"></image>
+          </view> 
+           <view wx:if = '{{item.type == "阴"}}'>
+            <image class="picture" src="{{yin}}"></image>
+          </view> 
+           <view wx:if = '{{item.type == "小雨"}}'>
+            <image class="picture" src="{{xiaoyu}}"></image>
+          </view> 
+          <view wx:if = '{{item.type == "中雨"}}'>
+            <image class="picture" src="{{zhongyu}}"></image>
+          </view> 
+          <view wx:if = '{{item.type == "大雨"}}'>
+            <image class="picture" src="{{dayu}}"></image>
+          </view> 
+          <view wx:if = '{{item.type == "暴雨"}}'>
+            <image class="picture" src="{{baoyu}}"></image>
+          </view> 
+           <view wx:if = '{{item.type == "雪"}}'>
+            <image class="picture" src="{{xue}}"></image>
+          </view> 
+          <view wx:if = '{{item.type == "小雪"}}'>
+            <image class="picture" src="{{xue}}"></image>
+          </view> 
+           <view wx:if = '{{item.type == "雾"}}'>
+            <image class="picture" src="{{wu}}"></image>
+          </view> 
+           <view wx:if = '{{item.type == "霾"}}'>
+            <image class="picture" src="{{mai}}"></image>
+          </view>           
+        </view>
+        <!-- 风向和风力 -->
+        <view class='wind i'>{{item.fx}}{{item.fl}}</view>
+      </view>
+    </view>
+  </view>
+<!-- 今日天气的详细信息 -->
+  <view class="guide">
+    <view class="title">今日天气</view>
+    <view class="guides">
+      <view class='jinritianqi' wx:if='{{forecast}}' wx:key="index">
+        <view>
+          <view class="jrwendu">温度</view>
+          <view class="jrwendu">{{wendu}}℃</view>
+        </view>
+        <view>
+          <view class="jrtianqi">天气</view>
+          <view class="jrtianqi">{{forecast[0].type}}</view>
+        </view>
+        <view>
+          <view class="jrshidu">湿度</view>
+          <view class="jrshidu">{{shidu}}</view>
+        </view>
+        <view>
+          <view class="jrzhiliang">空气质量</view>
+          <view class="jrzhiliang">{{quality}}</view>
+        </view>
+        <view>
+          <view class="jrgaowen">最高温</view>
+          <view class="jrgaowen">{{forecast[0].high}}</view>
+        </view>
+        <view>
+          <view class="jrdiwen">最低温</view>
+          <view class="jrdiwen">{{forecast[0].low}}</view>
+        </view>
+        <view>
+          <view class="jrrichu">日出</view>
+          <view class="jrrichu">{{forecast[0].sunrise}}</view>
+        </view>
+        <view>
+          <view class="jrriluo">日落</view>
+          <view class="jrriluo">{{forecast[0].sunset}}</view>
+        </view>
+        <view>
+          <view class="jrfengsu">风速</view>
+          <view class="jrfengsu">{{forecast[0].fx}}</view>
+        </view>
+        <view>
+          <view class="jrfengli">风力</view>
+          <view class="jrfengli">{{forecast[0].fl}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
